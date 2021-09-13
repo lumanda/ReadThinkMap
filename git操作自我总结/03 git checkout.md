@@ -10,10 +10,12 @@ git branch new_branchName old_branchName
 // 切换分支
 ```javaScript
 git checkout branch_name
+git switch <name>
 ```
 // 创建分支并切换
-```
+```javaScript
 git checkout -b branch_name
+git switch -c <name>
 ```
 //远程分支有，本地没有 同时建立联系
 ```

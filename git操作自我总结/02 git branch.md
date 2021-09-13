@@ -24,7 +24,10 @@ git branch -av
 git branch new_branchName 分支名
 git branch new_branchName CommitId
 ```
-
+// 修改分支名称
+```
+git branch -m <oldBranchName> <newBranchName>
+```
 //删除本地分支（合并过的）-D就是强制删除，不做检验
 ```
 git branch -D dev
