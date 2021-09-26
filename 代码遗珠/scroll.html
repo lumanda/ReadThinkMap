@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div {
+        border: 1px solid black;
+        width: 200px;
+        height: 100px;
+        overflow: scroll;
+    }
+    
+    #scrollDIV {
+        height: 500px;
+        background: red;
+        overflow: hidden;
+        border: 0;
+    }
+</style>
+</head>
+
+<body>
+    <p>滚动 div。</p>
+    <div onscroll="myFunction()" id="scrollParent">
+        <div id="scrollDIV"></div>
+    </div>
+    <p>滚动 <span id="demo">0</span> 次。</p>
+    <script>
+        x = 0;
+        var n2 = parseInt(scrollParent.scrollHeight) - parseInt(scrollParent.clientHeight);
+
+        function myFunction() {
+            document.getElementById("demo").innerHTML = x += 1;
+            var n1 = parseInt(scrollParent.scrollTop);
+            console.log(n1, n2)
+            if (n1 == n2) {
+                console.log('到达底部')
+            }
+        }
+    </script>
+</body>
+
+</html>
