@@ -24,10 +24,8 @@
 // 方法二：闭包
 
 var foo = function(...rest) {
-    var fn = function(...args) {
-        rest = [...rest, ...args]
-        console.log(rest);
-        return foo(...rest);
+    var fn = (...args) => {
+        return foo(...[...rest, ...args]);
     }
     fn.getValue = function() {
         return rest.reduce((sum, item) => {
@@ -39,7 +37,7 @@ var foo = function(...rest) {
 
 // var f1 = foo(1, 2, 3);
 // console.log(f1.getValue())
-// var f2 = foo(1)(2, 3);
-// console.log(f2.getValue());
-var f3 = foo(1)(2)(3)(4);
-console.log(f3.getValue());
+var f2 = foo(1)(2, 3);
+console.log(f2.getValue());
+// var f3 = foo(1)(2)(3)(4);
+// console.log(f3.getValue());
